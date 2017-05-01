@@ -4,6 +4,10 @@
 #Find Me On twitter @franklinrockz
 #Scripted Based Upon the Notes by https://gist.github.com/jamiesoncj
 
+#Setting up variables based on package names
+franz32="Franz-linux-ia32-4.0.4.tgz"
+franz64="Franz-linux-x64-4.0.4.tgz"
+
 cd
 cd /opt/
 sudo mkdir franz
@@ -18,13 +22,13 @@ read  choice
 if [[ $choice == 1 ]];
 then
   printf  "Starting the Downloading Part.....\n"
-  sudo wget -c "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-ia32-4.0.4.tgz"
-  sudo tar -xf Franz-linux-ia32-4.0.4.tgz -C /opt/franz
+  sudo wget -c "https://github.com/meetfranz/franz-app/releases/download/4.0.4/$franz32" -0 $franz32
+  sudo tar -xf $franz32 -C /opt/franz
 elif [[ $choice == 2 ]];
  then
    printf  "Starting the Downloading Part.....\n"
-   sudo wget -c "https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz"
-   sudo tar -xf Franz-linux-x64-4.0.4.tgz -C /opt/franz
+   sudo wget -c "https://github.com/meetfranz/franz-app/releases/download/4.0.4/$franz64" -0 $franz64
+   sudo tar -xf $franz64 -C /opt/franz
 else
   printf  "Skipping the Downloading Part.....\n"
   printf "Please Choose the Download version ...\n"
@@ -35,29 +39,32 @@ else
   if [[ $inner_choice == 1 ]];
   then
     'File not Found.. Line
-    if [ ! -f /Franz-linux-x64-4.0.4.tgz ]; then
+    if [ ! -f /$franz64 ]; then
     echo "File not found!"
      fi'
 
-    sudo tar -xf Franz-linux-ia32-4.0.4.tgz -C /opt/franz
+    sudo tar -xf $franz32 -C /opt/franz
   elif [[ $inner_choice == 2 ]];
    then
     'File not Found.. Line
-    if [ ! -f /Franz-linux-x64-4.0.4.tgz ]; then
+    if [ ! -f /$franz64 ]; then
     echo "File not found!"
      fi'
-     sudo tar -xf Franz-linux-x64-4.0.4.tgz -C /opt/franz
+     sudo tar -xf $franz64 -C /opt/franz
   else
     printf "Invalid Choice... We will be exiting"
     exit
   fi
 fi
 
+#Setting Up Icon For Franz
+
 sudo wget "https://cdn-images-1.medium.com/max/360/1*v86tTomtFZIdqzMNpvwIZw.png" -O franz-icon.png
 sudo cp franz-icon.png /opt/franz
+
+#Creating Desktop Entry
 sudo touch /usr/share/applications/franz.desktop
 cd /usr/share/applications/
-
 sudo sh -c "echo "[Desktop\ Entry]" >>franz.desktop"
 sudo sh -c  "echo "Name=Franz" >>franz.desktop"
 sudo sh -c "echo "Comment=Franz\ App" >>franz.desktop"
@@ -67,8 +74,28 @@ sudo sh -c "echo "Terminal=false" >>franz.desktop"
 sudo sh -c "echo "Type=Application" >>franz.desktop"
 sudo sh -c " echo "Categories=Messaging,Internet" >>franz.desktop"
 
-
 cd
+printf "\nInstallation Complete :) "
+
+# Cleaning Up Files
+if [[ ($choice==1) && ($choice == 2) ]]; then
+  printf "\nDo you want to Keep the Downloaded Files?(1 for Yes /0 for No)"
+  printf "\nIt is Adviced to Keep those Files"
+  read keep_files
+  if [[ $keep_files == 0 ]]; then
+    cd
+    printf "\nCleaning Up as Requested...."
+    cd
+    sudo rm -r franz-icon.png
+    if [[ $choice== 1 ]]; then
+      sudo rm -r $franz32
+    elif [[ $choice == 2 ]]; then
+      sudo rm -r $franz64
+    fi
+  fi
+fi
+
+#Running Franz
 cd /opt/franz/
 ./Franz
 exit
