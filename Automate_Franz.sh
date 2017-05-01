@@ -30,9 +30,15 @@ else
   printf "Please Choose the Download version ...\n"
   printf  "\n(1)-- For 32 bit"
   printf  "\n(2)-- For 64 bit"
+  printf  "\nEnter Your Choice --> "
   read inner_choice
   if [[ $inner_choice == 1 ]];
   then
+    'File not Found.. Line
+    if [ ! -f /Franz-linux-x64-4.0.4.tgz ]; then
+    echo "File not found!"
+     fi'
+
     sudo tar -xf Franz-linux-ia32-4.0.4.tgz -C /opt/franz
   elif [[ $inner_choice == 2 ]];
    then
