@@ -5,8 +5,9 @@
 #Scripted Based Upon the Notes by https://gist.github.com/jamiesoncj
 
 #Setting up variables based on package names
-franz32="Franz-linux-ia32-4.0.4.tgz"
-franz64="Franz-linux-x64-4.0.4.tgz"
+version="4.0.4"
+franz32="Franz-linux-ia32-$version.tgz"
+franz64="Franz-linux-x64-$version.tgz"
 
 cd
 cd /opt/
@@ -22,12 +23,12 @@ read  choice
 if [[ $choice == 1 ]];
 then
   printf  "Starting the Downloading Part.....\n"
-  sudo wget -c "https://github.com/meetfranz/franz-app/releases/download/4.0.4/$franz32" -0 $franz32
+  sudo wget -c "https://github.com/meetfranz/franz-app/releases/download/$version/$franz32" -0 $franz32
   sudo tar -xf $franz32 -C /opt/franz
 elif [[ $choice == 2 ]];
  then
    printf  "Starting the Downloading Part.....\n"
-   sudo wget -c "https://github.com/meetfranz/franz-app/releases/download/4.0.4/$franz64" -0 $franz64
+   sudo wget -c "https://github.com/meetfranz/franz-app/releases/download/$version/$franz64" -0 $franz64
    sudo tar -xf $franz64 -C /opt/franz
 else
   printf  "Skipping the Downloading Part.....\n"
@@ -94,7 +95,6 @@ if [[ ($choice==1) && ($choice == 2) ]]; then
     fi
   fi
 fi
-
 #Running Franz
 cd /opt/franz/
 ./Franz
