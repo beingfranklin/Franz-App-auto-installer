@@ -10,15 +10,37 @@ This Simple Shell Script installs Franz (Downloads if needed) and does all the o
 
 Visit www.meetfranz.com for more
 
+### Setup
+
+Open your Linux terminal and run the git command:
+```
+git clone https://github.com/franklinrockz/Automated_Franz.git
+```
+
+Now open the terminal and navigate to the folder you cloned just before and run the commands:
+
+```
+chmod a+x Automate_Franz.sh
+./file.sh
+```
+
+If installation is taken place properly you will find the Application in application folder.
+Or hit  **Super+A** to see the list of installed applications.
+
 
 More Documentation and Notes Coming Soon.
 
 **Version Stats**
 
-Current Version :1.0.1
-Franz Version : 4.0.4
-Script Last Updated on: 1st May 2017
+* Current Version :1.0.1
+* Franz Version : 4.0.4
+* Script Last Updated on: 30th August 2017
 
 **References**
 
-https://gist.github.com/jamiesoncj - For Creating Desktop Entry and Icon 
+*https://gist.github.com/jamiesoncj - For Creating Desktop Entry and Icon 
+
+**Support**
+
+* For Official Support from franz team mail to hi@meetfranz.com
+* For any issues regarding this script mail to franklinanton.007@gmail.com
