@@ -2,6 +2,7 @@
 #Simple Shell Script to Automate Installation of Franz Messaging App
 #Author :Franklin Antony
 #Find Me On twitter @franklinrockz
+#Email : franklinanton.007@gmail.com
 #Scripted Based Upon the Notes by https://gist.github.com/jamiesoncj
 
 #Setting up variables based on package names
