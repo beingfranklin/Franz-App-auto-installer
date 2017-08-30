@@ -10,9 +10,9 @@ This Simple Shell Script installs Franz (Downloads if needed) and does all the o
 
 Visit www.meetfranz.com for more
 
-### Setup
+## Setup
 
-Open your Linux terminal and run the git command:
+Open your Linux terminal and run the git command to clone the folder:
 ```
 git clone https://github.com/franklinrockz/Automated_Franz.git
 ```
