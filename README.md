@@ -30,17 +30,17 @@ Or hit  **Super+A** to see the list of installed applications.
 
 More Documentation and Notes Coming Soon.
 
-**Version Stats**
+### Version Stats
 
 * Current Version :1.0.1
 * Franz Version : 4.0.4
 * Script Last Updated on: 30th August 2017
 
-**References**
+### References
 
 * https://gist.github.com/jamiesoncj - For Creating Desktop Entry and Icon 
 
-**Support**
+### Support
 
 * For Official Support from franz team mail to hi@meetfranz.com
 * For any issues regarding this script mail to franklinanton.007@gmail.com
