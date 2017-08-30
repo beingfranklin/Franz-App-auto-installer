@@ -38,7 +38,7 @@ More Documentation and Notes Coming Soon.
 
 **References**
 
-*https://gist.github.com/jamiesoncj - For Creating Desktop Entry and Icon 
+* https://gist.github.com/jamiesoncj - For Creating Desktop Entry and Icon 
 
 **Support**
 
