@@ -43,4 +43,4 @@ More Documentation and Notes Coming Soon.
 ### Support
 
 * For Official Support from franz team mail to hi@meetfranz.com
-* For any issues regarding this script mail to franklinanton.007@gmail.com
+* For any issues regarding this script please raise an issue.
